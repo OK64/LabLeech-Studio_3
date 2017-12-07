@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include <iostream>
 #include <string>
+
 #include "WorldGeneration.generated.h"
 
 using namespace std;
@@ -14,7 +15,8 @@ UCLASS()
 class LABLEECH_API AWorldGeneration : public AActor
 {
 	GENERATED_BODY()
-	
+	TSubclassOf<class AActor> Test;
+	TArray<TSubclassOf<class AActor>> RoomsToSpawn;
 public:	
 	// Sets default values for this actor's properties
 	FString roomMesh1 = "StaticMesh'/Game/Room_Start/StartRoom_Level.StartRoom_Level'";
