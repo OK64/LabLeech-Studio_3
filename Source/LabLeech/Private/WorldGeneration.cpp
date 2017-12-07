@@ -29,6 +29,11 @@ AWorldGeneration::AWorldGeneration()
 	if (ItemBlueprint3.Object){
 		RoomsToSpawn.Add((UClass*)ItemBlueprint3.Object->GeneratedClass);
 	}
+
+	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint4(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/EndLevel.EndLevel'"));
+	if (ItemBlueprint4.Object) {
+		RoomsToSpawn.Add((UClass*)ItemBlueprint4.Object->GeneratedClass);
+	}
 }
 
 void AWorldGeneration::BeginPlay()
@@ -134,6 +139,7 @@ void AWorldGeneration::BeginPlay()
 			}
 		}else{
 			//INSERT CLOSED BLOCK AT END
+			RoomIndex = 3;
 			int diffX = roomArray[i][0] - roomArray[i-1][0];
 			int diffY = roomArray[i][1] - roomArray[i-1][1];
 
