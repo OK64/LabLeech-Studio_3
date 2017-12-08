@@ -15,25 +15,33 @@ AWorldGeneration::AWorldGeneration()
 	PrimaryActorTick.bCanEverTick = true;
 	roomMesh1 = TEXT("StaticMesh'/Game/Room_Start/StartRoom_Level.StartRoom_Level'");
 
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint1(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/StartLevel.StartLevel'"));
-	if (ItemBlueprint1.Object){
-		RoomsToSpawn.Add((UClass*)ItemBlueprint1.Object->GeneratedClass);
-	}
+	static ConstructorHelpers::FObjectFinder<UBlueprint>StartMap(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/StartLevel.StartLevel'"));
+	if(StartMap.Object)
+		RoomsToSpawn.Add((UClass*)StartMap.Object->GeneratedClass);
 
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint2(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/TwoDoor_Level_001.TwoDoor_Level_001'"));
-	if (ItemBlueprint2.Object){
-		RoomsToSpawn.Add((UClass*)ItemBlueprint2.Object->GeneratedClass);
-	}
+	static ConstructorHelpers::FObjectFinder<UBlueprint>LinearMap1(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/TwoDoor_Level_001.TwoDoor_Level_001'"));
+	if(LinearMap1.Object)
+		RoomsToSpawn.Add((UClass*)LinearMap1.Object->GeneratedClass);
+	static ConstructorHelpers::FObjectFinder<UBlueprint>LinearMap2(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/TwoDoor_Level_002.TwoDoor_Level_002'"));
+	if(LinearMap2.Object)
+		RoomsToSpawn.Add((UClass*)LinearMap2.Object->GeneratedClass);
+	static ConstructorHelpers::FObjectFinder<UBlueprint>LinearMap3(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/TwoDoor_Level_003.TwoDoor_Level_003'"));
+	if(LinearMap3.Object)
+		RoomsToSpawn.Add((UClass*)LinearMap3.Object->GeneratedClass);
 
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint3(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/RightAngle_Level_001.RightAngle_Level_001'"));
-	if (ItemBlueprint3.Object){
-		RoomsToSpawn.Add((UClass*)ItemBlueprint3.Object->GeneratedClass);
-	}
+	static ConstructorHelpers::FObjectFinder<UBlueprint>AngledMap1(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/RightAngle_Level_001.RightAngle_Level_001'"));
+	if(AngledMap1.Object)
+		RoomsToSpawn.Add((UClass*)AngledMap1.Object->GeneratedClass);
+	static ConstructorHelpers::FObjectFinder<UBlueprint>AngledMap2(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/RightAngle_Level_002.RightAngle_Level_002'"));
+	if(AngledMap2.Object)
+		RoomsToSpawn.Add((UClass*)AngledMap2.Object->GeneratedClass);
+	static ConstructorHelpers::FObjectFinder<UBlueprint>AngledMap3(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/RightAngle_Level_003.RightAngle_Level_003'"));
+	if(AngledMap3.Object)
+		RoomsToSpawn.Add((UClass*)AngledMap3.Object->GeneratedClass);
 
-	static ConstructorHelpers::FObjectFinder<UBlueprint> ItemBlueprint4(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/EndLevel.EndLevel'"));
-	if (ItemBlueprint4.Object) {
-		RoomsToSpawn.Add((UClass*)ItemBlueprint4.Object->GeneratedClass);
-	}
+	static ConstructorHelpers::FObjectFinder<UBlueprint>EndMap(TEXT("Blueprint'/Game/Maps/BluePrint_MapFiles/EndLevel.EndLevel'"));
+	if(EndMap.Object)
+		RoomsToSpawn.Add((UClass*)EndMap.Object->GeneratedClass);
 }
 
 void AWorldGeneration::BeginPlay()
@@ -60,11 +68,12 @@ void AWorldGeneration::BeginPlay()
 			int diffX = roomArray[i][0] - roomArray[i - 1][0];
 			int diffY = roomArray[i][1] - roomArray[i - 1][1];
 
+			int32 roomVariation = FMath::RandRange(0, 2);
 			rotate = FRotator(0, (FMath().Atan2(diffY, diffX)*180/3.14159265358979323846f)+90, 0);
 			if(roomArray[i-1][0] != roomArray[i+1][0] && roomArray[i-1][1] != roomArray[i+1][1])
 			{
 				mesh = TEXT("StaticMesh'/Game/RoomMeshes/Room_90Degree.Room_90Degree'");
-				RoomIndex = 2;
+				RoomIndex = 4 +roomVariation;
 				//USE RIGHT-ANGLED BLOCK AT APPROPRIATE ROATION
 				/*if(roomArray[i - 1][0] != roomArray[i][0] && roomArray[i + 1][0] == roomArray[i][0])
 				{
@@ -72,19 +81,19 @@ void AWorldGeneration::BeginPlay()
 				}*/
 				bool prev = false;
 				bool after = false;
-				if (roomArray[i - 1][0] == roomArray[i][0])
+				if(roomArray[i - 1][0] == roomArray[i][0])
 				{
-					if (roomArray[i - 1][1] > roomArray[i][1])
+					if(roomArray[i - 1][1] > roomArray[i][1])
 					{
 						prev = true;
 					}else{
 						prev = false;
 					}
 
-					if (roomArray[i + 1][0] > roomArray[i][0])
+					if(roomArray[i + 1][0] > roomArray[i][0])
 					{
 						after = true;
-					} else {
+					}else{
 						after = false;
 					}
 
@@ -99,47 +108,47 @@ void AWorldGeneration::BeginPlay()
 						rotate = FRotator(0, 180, 0);
 					}
 
-				}else if (roomArray[i + 1][0] == roomArray[i][0])
+				}else if(roomArray[i + 1][0] == roomArray[i][0])
 				{
-					if (roomArray[i + 1][1] > roomArray[i][1])
+					if(roomArray[i + 1][1] > roomArray[i][1])
 					{
 						after = true;
-					} else {
+					}else{
 						after = false;
 					}
 
-					if (roomArray[i - 1][0] > roomArray[i][0])
+					if(roomArray[i - 1][0] > roomArray[i][0])
 					{
 						prev = true;
-					} else {
+					}else{
 						prev = false;
 					}
 
-					if (prev && after)
+					if(prev && after)
 					{
 						rotate = FRotator(0, 270, 0);
-					} else if (!prev && !after) {
+					}else if (!prev && !after) {
 						rotate = FRotator(0, 90, 0);
-					} else if (prev && !after) {
+					}else if (prev && !after) {
 						rotate = FRotator(0, 180, 0);
-					} else {
+					}else{
 						rotate = FRotator(0, 0, 0);
 					}
 				}
 			}else if(roomArray[i - 1][0] == roomArray[i+1][0])
 			{
 				mesh = TEXT("StaticMesh'/Game/RoomMeshes/Room_Linear.Room_Linear'");
-				RoomIndex = 1;
+				RoomIndex = 1 +roomVariation;
 				//INSERT LINEAR BLOCK AT VERTICAL ROTATION
 			}else if(roomArray[i - 1][1] == roomArray[i+1][1])
 			{
 				mesh = TEXT("StaticMesh'/Game/RoomMeshes/Room_Linear.Room_Linear'");
-				RoomIndex = 1;
+				RoomIndex = 1 +roomVariation;
 				//INSERT LINEAR BLOCK AT HORIZONTAL ROTATION
 			}
 		}else{
 			//INSERT CLOSED BLOCK AT END
-			RoomIndex = 3;
+			RoomIndex = RoomsToSpawn.Num()-1;
 			int diffX = roomArray[i][0] - roomArray[i-1][0];
 			int diffY = roomArray[i][1] - roomArray[i-1][1];
 
