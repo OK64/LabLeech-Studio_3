@@ -13,7 +13,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define VICTORYBPLIBRARY_VictoryBPHTML_generated_h
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_RPC_WRAPPERS \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execVictoryHTML5_SetCursorVisible) \
 	{ \
@@ -33,7 +33,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execVictoryHTML5_SetCursorVisible) \
 	{ \
@@ -53,7 +53,7 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 	}
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_INCLASS_NO_PURE_DECLS \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUVictoryBPHTML(); \
 	friend VICTORYBPLIBRARY_API class UClass* Z_Construct_UClass_UVictoryBPHTML(); \
@@ -63,7 +63,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_INCLASS \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_INCLASS \
 private: \
 	static void StaticRegisterNativesUVictoryBPHTML(); \
 	friend VICTORYBPLIBRARY_API class UClass* Z_Construct_UClass_UVictoryBPHTML(); \
@@ -73,7 +73,7 @@ public: \
 	enum {IsIntrinsic=COMPILED_IN_INTRINSIC};
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_STANDARD_CONSTRUCTORS \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UVictoryBPHTML(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UVictoryBPHTML) \
@@ -86,7 +86,7 @@ private: \
 public:
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_ENHANCED_CONSTRUCTORS \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UVictoryBPHTML(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()) : Super(ObjectInitializer) { }; \
 private: \
@@ -99,26 +99,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UVictoryBPHTML); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UVictoryBPHTML)
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_PRIVATE_PROPERTY_OFFSET
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_18_PROLOG
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_GENERATED_BODY_LEGACY \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_PRIVATE_PROPERTY_OFFSET
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_19_PROLOG
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_PRIVATE_PROPERTY_OFFSET \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_RPC_WRAPPERS \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_INCLASS \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_STANDARD_CONSTRUCTORS \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_PRIVATE_PROPERTY_OFFSET \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_RPC_WRAPPERS \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_INCLASS \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_GENERATED_BODY \
+#define LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_PRIVATE_PROPERTY_OFFSET \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_RPC_WRAPPERS_NO_PURE_DECLS \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_INCLASS_NO_PURE_DECLS \
-	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_21_ENHANCED_CONSTRUCTORS \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_PRIVATE_PROPERTY_OFFSET \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_RPC_WRAPPERS_NO_PURE_DECLS \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_INCLASS_NO_PURE_DECLS \
+	LabLeech_Studio_3_Plugins_VictoryPlugin_Source_VictoryBPLibrary_Public_VictoryBPHTML_h_22_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
