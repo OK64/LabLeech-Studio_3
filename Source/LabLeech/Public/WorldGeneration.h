@@ -56,13 +56,13 @@ public:
 				int sPos[2] = {arr[0], arr[1]};
 				switch(count)
 				{
-					case 1: sPos[1] -= 100;
+					case 1: sPos[1] -= 1500;
 						break;
-					case 2: sPos[0] += 100;
+					case 2: sPos[0] += 1500;
 						break;
-					case 3: sPos[1] += 100;
+					case 3: sPos[1] += 1500;
 						break;
-					case 4: sPos[0] -= 100;
+					case 4: sPos[0] -= 1500;
 						break;
 				}
 
@@ -86,13 +86,13 @@ public:
 				int randomDirection = int(rand()%spacesAvailable);
 				switch (validSpaces[randomDirection])
 				{
-					case 1: arr[1] -= 100;
+					case 1: arr[1] -= 1500;
 						break;
-					case 2: arr[0] += 100;
+					case 2: arr[0] += 1500;
 						break;
-					case 3: arr[1] += 100;
+					case 3: arr[1] += 1500;
 						break;
-					case 4: arr[0] -= 100;
+					case 4: arr[0] -= 1500;
 						break;
 				}
 

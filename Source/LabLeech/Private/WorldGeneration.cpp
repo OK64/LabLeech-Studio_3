@@ -60,7 +60,6 @@ void AWorldGeneration::BeginPlay()
 		FRotator rotate = FRotator(0, 0, 0);
 		if(i == 0)
 		{
-			//USE CLOSED BLOCK AT START
 			int diffX = roomArray[i][0] - roomArray[i + 1][0];
 			int diffY = roomArray[i][1] - roomArray[i + 1][1];
 			rotate = FRotator(0, (FMath().Atan2(diffY, diffX)*180/3.14159265358979323846f)+90, 0);
@@ -74,7 +73,6 @@ void AWorldGeneration::BeginPlay()
 			{
 				mesh = TEXT("StaticMesh'/Game/RoomMeshes/Room_90Degree.Room_90Degree'");
 				RoomIndex = 4 +roomVariation;
-				//USE RIGHT-ANGLED BLOCK AT APPROPRIATE ROATION
 				/*if(roomArray[i - 1][0] != roomArray[i][0] && roomArray[i + 1][0] == roomArray[i][0])
 				{
 					rotate = FRotator(0, 0, 0);
@@ -139,15 +137,12 @@ void AWorldGeneration::BeginPlay()
 			{
 				mesh = TEXT("StaticMesh'/Game/RoomMeshes/Room_Linear.Room_Linear'");
 				RoomIndex = 1 +roomVariation;
-				//INSERT LINEAR BLOCK AT VERTICAL ROTATION
 			}else if(roomArray[i - 1][1] == roomArray[i+1][1])
 			{
 				mesh = TEXT("StaticMesh'/Game/RoomMeshes/Room_Linear.Room_Linear'");
 				RoomIndex = 1 +roomVariation;
-				//INSERT LINEAR BLOCK AT HORIZONTAL ROTATION
 			}
 		}else{
-			//INSERT CLOSED BLOCK AT END
 			RoomIndex = RoomsToSpawn.Num()-1;
 			int diffX = roomArray[i][0] - roomArray[i-1][0];
 			int diffY = roomArray[i][1] - roomArray[i-1][1];
@@ -167,7 +162,7 @@ void AWorldGeneration::BeginPlay()
 
 		//int32 RoomIndex = FMath::RandRange(0, RoomsToSpawn.Num() -1);
 		AActor* SpawnRoom = GetWorld()->SpawnActor<AActor>(RoomsToSpawn[RoomIndex], location, rotate, SpawnInfo);
-		SpawnRoom->SetActorScale3D(FVector(0.1f, 0.1f, 0.1f));
+		SpawnRoom->SetActorScale3D(FVector(1.5f, 1.5f, 1.5f));
 
 		//AActor* asd = GetWorld()->SpawnActor<AActor>(Test, location, rotate, SpawnInfo);
 	}
